@@ -35,7 +35,7 @@ export default async function Home() {
             />
           </Link>
           <p className="text-lg text-center text-gray-400 max-w-2xl mb-16">
-            Explore the history of PostgreSQL, when we didn't have all the features we know and love today
+            Explore the history of PostgreSQL, when we didn&apos;t have all the features we know and love today
           </p>
         </div>
         <Timeline items={postgresVersions} />

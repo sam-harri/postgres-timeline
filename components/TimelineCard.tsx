@@ -16,7 +16,6 @@ export default function TimelineCard({
   releaseDate,
   features,
   isLeft,
-  year,
 }: TimelineCardProps) {
   return (
     <motion.div
