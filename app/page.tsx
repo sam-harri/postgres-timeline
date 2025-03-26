@@ -21,6 +21,25 @@ export default async function Home() {
           </span>
         </h1>
 
+        <div className="fixed inset-0 z-0">
+        {/* Grid pattern with PostgreSQL colors */}
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `
+              linear-gradient(rgba(50,194,232,0.1) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(99,246,85,0.1) 1px, transparent 1px)
+            `,
+            backgroundSize: "40px 40px",
+          }}
+        ></div>
+
+        {/* Subtle glow effects */}
+        <div className="absolute top-0 -left-40 w-96 h-96 bg-[#32c2e8] opacity-10 blur-[100px] rounded-full"></div>
+        <div className="absolute bottom-0 -right-40 w-96 h-96 bg-[#63f655] opacity-10 blur-[100px] rounded-full"></div>
+      </div>
+
+
         <div className="flex flex-col items-center mb-16">
           <p className="text-lg text-center text-gray-400 max-w-2xl my-4">
             Presented by
