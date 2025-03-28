@@ -13,8 +13,29 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Postgres Timeline",
-  description: "A look at the history of PostgreSQL",
+  title: "PostgreSQL Timeline",
+  description: "Explore the history of PostgreSQL, when we didn't have all the features we know and love today",
+  openGraph: {
+    title: "PostgreSQL Timeline",
+    description: "Explore the history of PostgreSQL, when we didn't have all the features we know and love today",
+    type: "website",
+    locale: "en_US",
+    siteName: "PostgreSQL Timeline",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "PostgreSQL Timeline",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PostgreSQL Timeline",
+    description: "Explore the history of PostgreSQL, when we didn't have all the features we know and love today",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function RootLayout({
