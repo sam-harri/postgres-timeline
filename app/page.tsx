@@ -1,10 +1,12 @@
 import Timeline from "@/components/Timeline"
-import { getPostgresVersions } from "@/app/actions"
+import { getPostgresVersions, getPostgresLifespans } from "@/app/actions"
 import Image from "next/image"
 import Link from "next/link"
+import PostgresGantt from "@/components/PostgresGantt"
 
 export default async function Home() {
   const postgresVersions = await getPostgresVersions()
+  const postgresLifespans = await getPostgresLifespans()
 
   return (
     <main className="min-h-screen bg-black text-white py-12 px-4 relative overflow-hidden">
@@ -58,6 +60,7 @@ export default async function Home() {
           </p>
         </div>
         <Timeline items={postgresVersions} />
+        <PostgresGantt lifespans={postgresLifespans} />
       </div>
 
       {/* Gradient fade at the bottom - now fixed */}

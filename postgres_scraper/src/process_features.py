@@ -7,7 +7,6 @@ from openai import AsyncOpenAI
 from typing import List, Optional
 from pydantic import BaseModel
 import asyncio
-from concurrent.futures import ThreadPoolExecutor
 
 # Configure loguru
 logger.remove()  # Remove default handler
