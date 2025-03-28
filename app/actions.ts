@@ -48,7 +48,7 @@ interface PostgresLifespanRow {
   last_release_date: string
 }
 
-export async function getPostgresLifespans(): Promise<PostgresLifespanRow[]> {
+export async function getPostgresLifespans(): Promise<PostgresLifespan[]> {
   const sql = neon(process.env.DATABASE_URL!)
   
   try {
