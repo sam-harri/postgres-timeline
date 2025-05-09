@@ -29,8 +29,8 @@ export default function PostgresGantt({ lifespans }: PostgresGanttProps) {
   const getPositionPercentage = (dateStr: string) => {
     const date = new Date(dateStr)
     const timeDiff = date.getTime() - earliestDate.getTime()
-    // Format to a fixed number of decimal places to ensure consistency
-    return Number((timeDiff / timeRange * 100).toFixed(4))
+    // Use a fixed number of decimal places and convert to number to ensure consistency
+    return Number((timeDiff / timeRange * 100).toFixed(2))
   }
 
   // Generate year markers for the timeline
@@ -75,7 +75,7 @@ export default function PostgresGantt({ lifespans }: PostgresGanttProps) {
             <div
               key={year}
               className="absolute transform -translate-x-1/2 text-xs text-gray-400"
-              style={{ left: `${yearPosition.toFixed(4)}%` }}
+              style={{ left: `${yearPosition}%` }}
             >
               <div className="h-2 w-px bg-gray-700 mx-auto mb-1"></div>
               {year}
@@ -104,7 +104,7 @@ export default function PostgresGantt({ lifespans }: PostgresGanttProps) {
                 <div 
                   className="absolute top-1/2 whitespace-nowrap text-right pr-2"
                   style={{ 
-                    left: `${startPosition.toFixed(4)}%`,
+                    left: `${startPosition}%`,
                     transform: 'translate(-100%, -50%)'
                   }}
                 >
@@ -114,7 +114,7 @@ export default function PostgresGantt({ lifespans }: PostgresGanttProps) {
                 <div 
                   className="absolute top-1/2 whitespace-nowrap text-left pl-2"
                   style={{ 
-                    left: `${(startPosition + width).toFixed(4)}%`,
+                    left: `${startPosition + width}%`,
                     transform: 'translateY(-50%)'
                   }}
                 >
@@ -126,8 +126,8 @@ export default function PostgresGantt({ lifespans }: PostgresGanttProps) {
               <motion.div
                 className="absolute h-4 top-1/2 -translate-y-1/2 rounded-full overflow-hidden flex items-center"
                 style={{
-                  left: `${startPosition.toFixed(4)}%`,
-                  width: `${width.toFixed(4)}%`,
+                  left: `${startPosition}%`,
+                  width: `${width}%`,
                 }}
                 initial={{ opacity: 0, scaleX: 0 }}
                 animate={{ opacity: 1, scaleX: 1 }}

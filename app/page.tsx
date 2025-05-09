@@ -13,7 +13,7 @@ export default async function Home() {
       {/* Gradient fade at the top - now fixed */}
       <div className="fixed top-0 left-0 right-0 h-32 bg-gradient-to-b from-black to-transparent z-20 pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto relative z-0 pt-8">
+      <div className="max-w-7xl mx-auto relative z-10 pt-8">
         {/* Neon logo and presentation text */}
         
         <h1 className="text-6xl font-bold text-center">
@@ -23,7 +23,7 @@ export default async function Home() {
           </span>
         </h1>
 
-        <div className="fixed inset-0 z-0">
+        <div className="fixed inset-0 z-0 pointer-events-none">
         {/* Grid pattern with PostgreSQL colors */}
         <div
           className="absolute inset-0"
@@ -41,8 +41,7 @@ export default async function Home() {
         <div className="absolute bottom-0 -right-40 w-96 h-96 bg-[#63f655] opacity-10 blur-[100px] rounded-full"></div>
       </div>
 
-
-        <div className="flex flex-col items-center mb-16">
+        <div className="flex flex-col items-center mb-16 relative z-20">
           <p className="text-lg text-center text-gray-400 max-w-2xl my-4">
             Presented by
           </p>
