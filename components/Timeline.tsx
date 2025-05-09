@@ -13,7 +13,7 @@ export default function Timeline({ items }: TimelineProps) {
   return (
     <div className="relative">
       {/* Center line - now white */}
-      <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-px bg-white/30" />
+      <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 h-full w-px bg-white/30" />
 
       <div className="relative">
         {items.map((item, index) => (
@@ -66,29 +66,29 @@ function TimelineItem({ item, index, isLeft, items }: TimelineItemProps) {
   const showYear = index === 0 || previousItem?.year !== item.year;
 
   return (
-    <div ref={ref} className="mb-16 relative">
+    <div ref={ref} className="mb-8 md:mb-16 relative">
       {/* Year label */}
       {showYear && (
-        <div className={`absolute ${isLeft ? 'left-[52%]' : 'right-[52%]'} top-6 transform ${isLeft ? 'translate-x-2' : '-translate-x-2'}`}>
+        <div className="absolute left-[52%] md:left-[52%] top-6 transform translate-x-2 md:translate-x-2">
           <motion.div
             initial={{ opacity: 0 }}
             animate={controls}
             variants={variants}
-            className="text-gray-700 text-4xl font-medium"
+            className="text-gray-700 text-2xl md:text-4xl font-medium"
           >
             {item.year}
           </motion.div>
         </div>
       )}
 
-      {/* Timeline dot with gap - improved to completely hide the line */}
-      <div className="absolute left-1/2 top-6 transform -translate-x-1/2 flex flex-col items-center z-30">
+      {/* Timeline dot with gap */}
+      <div className="absolute left-4 md:left-1/2 top-6 transform md:-translate-x-1/2 flex flex-col items-center z-30">
         {/* White background block to completely hide the line */}
-        <div className="absolute w-8 h-8 bg-black rounded-full"></div>
+        {/* <div className="absolute w-6 h-6 md:w-8 md:h-8 bg-black rounded-full -translate-x-1/4"></div> */}
 
         {/* Dot */}
         <motion.div
-          className={`w-4 h-4 rounded-full bg-gradient-to-r from-[#32c2e8] to-[#63f655] relative translate-y-2`}
+          className={`w-3 h-3 md:w-4 md:h-4 rounded-full bg-gradient-to-r from-[#32c2e8] to-[#63f655] relative translate-y-1/2 md:translate-y-2 -translate-x-1/2 md:translate-x-0`}
           initial={{ scale: 0 }}
           animate={controls}
           variants={{
@@ -102,13 +102,13 @@ function TimelineItem({ item, index, isLeft, items }: TimelineItemProps) {
             },
           }}
         >
-<div className="absolute inset-0 bg-black opacity-20 rounded-full"></div>
+          <div className="absolute inset-0 bg-black opacity-20 rounded-full"></div>
         </motion.div>
       </div>
 
       {/* Card */}
       <motion.div
-        className={`relative ${isLeft ? "pr-12 mr-auto" : "pl-12 ml-auto"} w-5/12`}
+        className={`relative pl-12 md:pl-0 ml-auto w-full md:w-5/12 ${isLeft ? 'md:pr-12 md:mr-auto md:ml-0' : 'md:pl-12 md:ml-auto'}`}
         initial="hidden"
         animate={controls}
         variants={variants}
